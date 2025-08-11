@@ -8,6 +8,7 @@ const products = [
       count: 87
     },
     priceCents: 1090,
+    description: "Comfortable and breathable athletic socks perfect for sports and everyday wear.",
     keywords: [
       "socks",
       "sports",
@@ -23,6 +24,7 @@ const products = [
       count: 127
     },
     priceCents: 2095,
+    description: "Intermediate size basketball suitable for indoor and outdoor play.",
     keywords: [
       "sports",
       "basketballs"
@@ -37,6 +39,7 @@ const products = [
       count: 56
     },
     priceCents: 799,
+    description: "Comfortable and stylish cotton t-shirts for everyday wear.",
     keywords: [
       "tshirts",
       "apparel",
@@ -54,6 +57,7 @@ const products = [
       count: 2197
     },
     priceCents: 1899,
+    description: "Compact and efficient 2-slot toaster for quick breakfasts.",
     keywords: [
       "toaster",
       "kitchen",
@@ -68,6 +72,7 @@ const products = [
       stars: 4,
       count: 37
     },
+    description: "Elegant and durable dinner plate set for everyday use.",
     priceCents: 2067,
     keywords: [
       "plates",
@@ -84,6 +89,7 @@ const products = [
       count: 175
     },
     priceCents: 3499,
+    description: "Versatile and durable nonstick bakeware set for all your baking needs.",
     keywords: [
       "kitchen",
       "cookware"
@@ -98,6 +104,7 @@ const products = [
       count: 317
     },
     priceCents: 2400,
+    description: "Cozy and warm hooded fleece sweatshirt for casual wear.",
     keywords: [
       "hoodies",
       "sweaters",
@@ -113,6 +120,7 @@ const products = [
       count: 144
     },
     priceCents: 3599,
+    description: "Soft and absorbent luxury towel set for a spa-like experience at home.",    
     keywords: [
       "bathroom",
       "washroom",
@@ -130,6 +138,7 @@ const products = [
       count: 305
     },
     priceCents: 2899,
+    description: "High-efficiency liquid laundry detergent for a deep clean.",
     keywords: [
       "bathroom",
       "cleaning"
@@ -144,6 +153,7 @@ const products = [
       count: 89
     },
     priceCents: 3390,
+    description: "Comfortable and breathable athletic sneakers perfect for sports and everyday wear.",
     keywords: [
       "shoes",
       "running shoes",
@@ -159,6 +169,7 @@ const products = [
       count: 235
     },
     priceCents: 2070,
+    description: "Lightweight and flowy chiffon cover-up perfect for the beach.",
     keywords: [
       "robe",
       "swimsuit",
@@ -178,6 +189,7 @@ const products = [
       count: 30
     },
     priceCents: 1560,
+    description: "Stylish round sunglasses with UV protection.",
     keywords: [
       "accessories",
       "shades"
@@ -192,6 +204,7 @@ const products = [
       count: 562
     },
     priceCents: 2499,
+    description: "Comfortable and stylish sandals perfect for the beach.",
     keywords: [
       "footwear",
       "sandals",
@@ -209,6 +222,7 @@ const products = [
       count: 232
     },
     priceCents: 4599,
+    description: "Light-blocking curtains for better sleep and privacy.",
     keywords: [
       "bedroom",
       "curtains",
@@ -224,6 +238,7 @@ const products = [
       count: 160
     },
     priceCents: 1699,
+    description: "Comfortable and stylish shorts perfect for summer.",
     keywords: [
       "shorts",
       "apparel",
@@ -239,6 +254,7 @@ const products = [
       count: 846
     },
     priceCents: 3074,
+    description: "Compact and efficient 2-slot toaster for quick breakfasts.",
     keywords: [
       "water boiler",
       "appliances",
@@ -254,6 +270,7 @@ const products = [
       count: 99
     },
     priceCents: 2374,
+    description: "Ultra-soft 2-ply facial tissues for everyday use.",
     keywords: [
       "kleenex",
       "tissues",
@@ -271,6 +288,7 @@ const products = [
       count: 215
     },
     priceCents: 2200,
+    description: "Stylish straw sun hat for protection against the sun.",
     keywords: [
       "hats",
       "straw hats",
@@ -287,6 +305,7 @@ const products = [
       count: 52
     },
     priceCents: 1799,
+    description: "Elegant and stylish sterling silver earrings with a floral design.",
     keywords: [
       "jewelry",
       "accessories",
@@ -302,6 +321,7 @@ const products = [
       count: 2465
     },
     priceCents: 1374,
+    description: "Comfortable and stylish cotton t-shirts for everyday wear.",
     keywords: [
       "hooded",
       "hoodies",
@@ -336,6 +356,7 @@ const products = [
       count: 326
     },
     priceCents: 2640,
+    description: "Comfortable and stylish ballet flats for everyday wear.",
     keywords: [
       "shoes",
       "flats",
@@ -352,6 +373,7 @@ const products = [
       count: 2556
     },
     priceCents: 1599,
+    description: "Lightweight and breathable polo shirt for active wear.",
     keywords: [
       "tshirts",
       "shirts",
@@ -370,6 +392,7 @@ const products = [
       count: 2286
     },
     priceCents: 8300,
+    description: "Stylish and functional trash can with foot pedal for hands-free operation.",
     keywords: [
       "garbage",
       "bins",
@@ -386,6 +409,7 @@ const products = [
       count: 456
     },
     priceCents: 2399,
+    description: "Soft and breathable duvet cover set for a cozy bedroom.",
     keywords: [
       "bedroom",
       "bed sheets",
@@ -403,6 +427,7 @@ const products = [
       count: 83
     },
     priceCents: 1250,
+    description: "Warm and cozy cable-knit beanie for winter wear.",
     keywords: [
       "hats",
       "winter hats",
@@ -421,6 +446,7 @@ const products = [
       count: 9017
     },
     priceCents: 2290,
+    description: "Classic-fit chino pants for a timeless look.",
     keywords: [
       "pants",
       "apparel",
@@ -436,6 +462,7 @@ const products = [
       count: 229
     },
     priceCents: 3890,
+    description: "Comfortable and breathable athletic sneakers perfect for sports and everyday wear.",
     keywords: [
       "shoes",
       "running shoes",
@@ -452,6 +479,7 @@ const products = [
       count: 42
     },
     priceCents: 1690,
+    description: "Stylish round sunglasses with UV protection.",
     keywords: [
       "sunglasses",
       "glasses",
@@ -468,6 +496,7 @@ const products = [
       count: 511
     },
     priceCents: 6797,
+    description: "Durable and versatile cookware set for all your cooking needs.",
     keywords: [
       "cooking set",
       "kitchen"
@@ -482,6 +511,7 @@ const products = [
       count: 130
     },
     priceCents: 1649,
+    description: "Sleek and modern vanity mirror with a heavy base for stability.",
     keywords: [
       "bathroom",
       "washroom",
@@ -498,6 +528,7 @@ const products = [
       count: 248
     },
     priceCents: 2400,
+    description: "Comfortable and stylish jogger sweatpants for casual wear.",
     keywords: [
       "pants",
       "sweatpants",
@@ -515,6 +546,7 @@ const products = [
       count: 117
     },
     priceCents: 2400,
+    description: "Elegant and stylish gold earrings with a twist design.",
     keywords: [
       "accessories",
       "womens"
@@ -529,6 +561,7 @@ const products = [
       count: 126
     },
     priceCents: 2899,
+    description: "Durable and stackable food storage containers for kitchen organization.",
     keywords: [
       "boxes",
       "food containers",
@@ -544,6 +577,7 @@ const products = [
       count: 1211
     },
     priceCents: 2250,
+    description: "Compact and efficient 2-slot toaster for quick breakfasts.",
     keywords: [
       "coffeemakers",
       "kitchen",
@@ -559,6 +593,7 @@ const products = [
       count: 363
     },
     priceCents: 3099,
+    description: "Light-blocking curtains for better sleep and privacy.",
     keywords: [
       "bedroom",
       "home"
@@ -573,6 +608,7 @@ const products = [
       count: 93
     },
     priceCents: 2110,
+    description: "Soft and absorbent cotton bath towels for everyday use.",
     keywords: [
       "bathroom",
       "home",
@@ -588,6 +624,7 @@ const products = [
       count: 89
     },
     priceCents: 3390,
+    description: "Comfortable and stylish athletic sneakers for active wear.",
     keywords: [
       "shoes",
       "running shoes",
@@ -604,6 +641,7 @@ const products = [
       count: 3
     },
     priceCents: 10747,
+    description: "Powerful countertop blender with multiple speed settings.",
     keywords: [
       "food blenders",
       "kitchen",
@@ -619,6 +657,7 @@ const products = [
       count: 679
     },
     priceCents: 3899,
+    description: "Versatile mixing bowl set with lids for all your baking needs.",
     keywords: [
       "mixing bowls",
       "baking",
@@ -635,6 +674,7 @@ const products = [
       count: 1045
     },
     priceCents: 5799,
+    description: "Highly absorbent kitchen paper towels for everyday use.",
     keywords: [
       "kitchen",
       "kitchen towels",
@@ -650,6 +690,7 @@ const products = [
       count: 3157
     },
     priceCents: 2400,
+    description: "Cozy and warm fleece sweatshirt for everyday wear.",
     keywords: [
       "sweaters",
       "hoodies",
