@@ -1,31 +1,38 @@
-const products = require('./data/products');
+// import modules
+
+    // we need to import the express module to create our server and define our routes.
+express = require('express');
 const cors = require("cors");
 
-
-// import modules
-express = require('express');
-const allProduct = require('./data/products.js')
+    // defind the routes of api products
+const productRoutes = require('./routes/products.js');
 
 // initialize express
 const app = express();
 
 // use middleware
+    // middleware for run the api local in browser
 app.use(cors());
+    // middleware for parsing json request body
 app.use(express.json());
 
+// Routes
+// we need to define the routes for the products API
+// we will use the productRoutes defined in the routes/products.js file
+// we need to mount the productRoutes on the /api/products path
+// first argument is the path the second is the routes(the routes is defined in the productRoutes variable as routes.get)
 
-// routes get all products
-app.get('/products', (req, res) => {
-  res.json(allProduct);
-});
+    // get all products api
+app.use('/products', productRoutes);
 
-app.get('/products/:id', (req, res) => {
-    const product = allProduct.find(p => p.id === req.params.id);
-    if (!product) {
-        return res.status(404).json({ message: 'Product not found' });
-    }
-    res.json(product);
-});
+    // get product by id api
+app.use('/products/:id', productRoutes);
+
+
+
+
+
+// run the server
 
 const PORT = process.env.PORT || 5000;
 
