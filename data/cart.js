@@ -14,7 +14,7 @@ const cart = [{
       "sports",
       "apparel"
     ],
-    count: 3
+    quantity: 3
 
   },
 {
@@ -31,7 +31,7 @@ const cart = [{
         "sports",
         "basketballs"
       ],
-      count: 1
+      quantity: 1
     },
   
 ]

@@ -71,10 +71,10 @@ routes.delete('/', (req, res) => {
  * @returns {Object} - The updated item
  */
 routes.patch('/', (req, res) => {
-    const { id, count } = req.body;
+    const { id, quantity } = req.body;
     const item = cart.viewCart().find(item => item.id === id);
     if (item) {
-        item.count = count;
+        item.quantity = quantity;
         res.json(item);
     } else {
         res.status(404).json({ message: 'Item not found' });
