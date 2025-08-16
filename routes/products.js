@@ -7,7 +7,8 @@ const express = require("express");
 // import routes form express
 const routes = express.Router();
 // we use routes to define our API endpoints instead of app.get
-
+// import validate
+const { schemaProductParams,schemaProductBody } = require("../validations/produitVal.js");
 // products api
 // routes get all products
 /**
@@ -30,6 +31,12 @@ routes.get("/", (req, res) => {
  */
 
 routes.get("/:id", (req, res) => {
+  // Find the product by id
+  const { error } = schemaProductParams.validate(req.params);
+  if (error) {
+    return res.status(400).json({ message: error.details[0].message });
+  }
+  // Find the product by id
   const product = allProduct.find((p) => p.id === req.params.id);
   if (!product) {
     return res.status(404).json({ message: "Product not found" });

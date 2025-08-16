@@ -8,7 +8,8 @@ const express = require("express");
 const routes = express.Router();
 // we use routes to define our API endpoints instead of app.get
 
-
+// import validationCart
+const { schemaDelete,schemaPatch,schemaPost } = require("../validations/cartVal.js");
 
 // products api
 // creating api a route for cart
@@ -49,6 +50,11 @@ routes.get('/', (req, res) => {
 
 routes.post('/', (req, res) => {
     const item = req.body;
+    // Validate the item using the validation function
+    const { error } = schemaPost.validate(item);
+    if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+    }
     cart.addToCart(item);
     res.status(201).json(item);
 });
@@ -60,8 +66,17 @@ routes.post('/', (req, res) => {
  */
 routes.delete('/', (req, res) => {
     const item = req.body;
-    cart.removeFromCart(item);
-    res.status(204).end();
+    // Validate the item using the validation function
+    const { error } = schemaDelete.validate(item);
+    if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+    }
+    const removed = cart.removeFromCart(item);
+    if (removed) {
+        res.status(204).end();
+    } else {
+        res.status(404).json({ message: 'Item not found' });
+    }
 });
 
 /**
@@ -72,6 +87,11 @@ routes.delete('/', (req, res) => {
  */
 routes.patch('/', (req, res) => {
     const { id, quantity } = req.body;
+    // Validate the item using the validation function
+    const { error } = schemaPatch.validate({ id, quantity });
+    if (error) {
+        return res.status(400).json({ message: error.details[0].message });
+    }
     const item = cart.viewCart().find(item => item.id === id);
     if (item) {
         item.quantity = quantity;

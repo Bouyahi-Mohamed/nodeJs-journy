@@ -45,6 +45,7 @@ const removeFromCart = (itemId) => {
     if (index > -1) {
         cart.splice(index, 1)
     }
+
 }
 
 const viewCart = () => {
