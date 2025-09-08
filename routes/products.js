@@ -1,5 +1,4 @@
-// import array of products from data/products.js
-const allProduct = require("../data/products.js");
+
 
 // import frameworks 'express';
 const express = require("express");
@@ -7,8 +6,10 @@ const express = require("express");
 // import routes form express
 const routes = express.Router();
 // we use routes to define our API endpoints instead of app.get
-// import validate
-const { schemaProductParams,schemaProductBody } = require("../validations/produitVal.js");
+
+// import controllers
+const { getProducts, getProductById } = require("../controllers/productsController.js");
+
 // products api
 // routes get all products
 /**
@@ -18,9 +19,7 @@ const { schemaProductParams,schemaProductBody } = require("../validations/produi
  * @returns {Array} List of products
  */
 
-routes.get("/", (req, res) => {
-  res.json(allProduct);
-});
+routes.get("/", getProducts);
 
 // routes get product by id
 /**
@@ -30,19 +29,7 @@ routes.get("/", (req, res) => {
  * @returns {Object} Product object
  */
 
-routes.get("/:id", (req, res) => {
-  // Find the product by id
-  const { error } = schemaProductParams.validate(req.params);
-  if (error) {
-    return res.status(400).json({ message: error.details[0].message });
-  }
-  // Find the product by id
-  const product = allProduct.find((p) => p.id === req.params.id);
-  if (!product) {
-    return res.status(404).json({ message: "Product not found" });
-  }
-  res.json(product);
-});
+routes.get("/:id", getProductById);
 
 module.exports = routes;
 // we need to export the routes so they can be used in other parts of the application.
