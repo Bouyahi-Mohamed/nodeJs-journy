@@ -1,5 +1,4 @@
-// import array of products from data/products.js
-const cart = require("../data/cart.js");
+
 
 // import frameworks 'express';
 const express = require("express");
@@ -9,7 +8,9 @@ const routes = express.Router();
 // we use routes to define our API endpoints instead of app.get
 
 // import controllers for cart
-const { getAllCartItems, getCartById, addCartItem ,deleteCartItem,patchCartItem} = require("../controllers/cartsController.js");
+const { getAllCartItems, getCartById, addCartItem ,deleteCartItem,patchCartItem,putCartItem} = require("../controllers/cartsController.js");
+
+// im
 
 // creating api a route for cart
 // Cart api
@@ -59,5 +60,14 @@ routes.delete('/', deleteCartItem);
  */
 routes.patch('/', patchCartItem);
 
+/**
+ * @disc put an quantity of an item in the cart
+ * @route PUT /cart
+ * @access public
+ * @returns {Object} - The updated item
+ */
+routes.put('/', putCartItem);
+
+// export the routes
 module.exports = routes;
 // we need to export the routes so they can be used in other parts of the application.

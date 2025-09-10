@@ -4,6 +4,9 @@
 express = require('express');
 const cors = require("cors");
 
+//import mongoose to connect to mongodb
+const mongoose = require('mongoose');
+
     // defind the routes of api products
 const productRoutes = require('./routes/products.js');
     // define the routes of api cart
@@ -18,6 +21,19 @@ app.use(cors());
     // middleware for parsing json request body
 app.use(express.json());
 
+// connect to mongodb
+// we need to connect to the mongodb database using mongoose
+// we will use the mongoose.connect() method to connect to the database
+// we will connect to a local mongodb database named ecommerce
+async function main () {
+  await mongoose.connect('mongodb://localhost:27017/ecommerce')
+}
+try {
+  main();
+  console.log('Connected to MongoDB...');
+} catch (err) {
+  console.log(err);
+}
 // Routes
 // we need to define the routes for the products API
 // we will use the productRoutes defined in the routes/products.js file
