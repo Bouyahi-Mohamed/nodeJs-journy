@@ -38,6 +38,7 @@ const getAllCartItems = async (req, res) => {
 const getCartById = async (req, res) => {
     try {
         const item = await Cart.findById(req.params.id).populate('product');
+        // const item = await Cart.findById(req.params.id).populate('product' ,['name', 'priceCents', 'image']); // to get specific fields
         if (item) {
             res.json(item);
         } else {

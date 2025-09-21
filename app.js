@@ -3,6 +3,8 @@
     // we need to import the express module to create our server and define our routes.
 express = require('express');
 const cors = require("cors");
+  //  import dotenv to load environment variables
+require('dotenv').config();
 
 //import mongoose to connect to mongodb
 const mongoose = require('mongoose');
@@ -26,7 +28,7 @@ app.use(express.json());
 // we will use the mongoose.connect() method to connect to the database
 // we will connect to a local mongodb database named ecommerce
 async function main () {
-  await mongoose.connect('mongodb://localhost:27017/ecommerce')
+  await mongoose.connect(process.env.MONGO_URI);
 }
 try {
   main();
