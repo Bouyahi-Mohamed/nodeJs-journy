@@ -5,6 +5,8 @@ express = require('express');
 const cors = require("cors");
   //  import dotenv to load environment variables
 require('dotenv').config();
+  // import error handling middleware
+  const { notFound , errorHandler} = require('./middlewares/errors.js');
 
 //import mongoose to connect to mongodb
 const mongoose = require('mongoose');
@@ -51,7 +53,12 @@ app.use('/products', productRoutes);
 app.use('/cart', cartRoutes);
 
 
+// Error Handling Middleware
+// we need to use the error handling middleware defined in the middlewares/errors.js file
+// we will use the notFound and errorHandler middleware in the end of the middleware stack
 
+app.use(notFound);
+app.use(errorHandler);
 // run the server
 
 const PORT = process.env.PORT || 5000;
