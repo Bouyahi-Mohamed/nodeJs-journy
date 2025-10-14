@@ -8,9 +8,8 @@ const routes = express.Router();
 // we use routes to define our API endpoints instead of app.get
 
 // import controllers for cart
-const { getAllCartItems, getCartById, addCartItem ,deleteCartItem,patchCartItem,putCartItem} = require("../controllers/cartsController.js");
+const { getAllCartItems, getCartById, addCartItem ,deleteCartItem,patchCartItem,putCartItem,patchCartItemDeliveryOption} = require("../controllers/cartsController.js");
 
-// im
 
 // creating api a route for cart
 // Cart api
@@ -67,6 +66,15 @@ routes.patch('/', patchCartItem);
  * @returns {Object} - The updated item
  */
 routes.put('/', putCartItem);
+
+// modify deliverOption in the cart item
+/**
+ * @disc Patch an deliveryOption of an item in the cart
+ * @route PATCH /cart/delivery
+ * @access public
+ * @returns {Object} - The updated item with new delivery option
+ */
+routes.patch('/delivery', patchCartItemDeliveryOption);
 
 // export the routes
 module.exports = routes;

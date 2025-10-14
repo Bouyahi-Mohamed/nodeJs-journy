@@ -10,11 +10,13 @@ require('dotenv').config();
 
 //import mongoose to connect to mongodb
 const mongoose = require('mongoose');
-
+// define the routes of api 
     // defind the routes of api products
 const productRoutes = require('./routes/products.js');
     // define the routes of api cart
 const cartRoutes = require('./routes/cart.js');
+    // define the routes of api deliverOptions
+const deliverOptionRoutes = require('./routes/DeliverOption.js');
 
 // initialize express
 const app = express();
@@ -51,6 +53,9 @@ app.use('/products', productRoutes);
 
 // cartRoutes
 app.use('/cart', cartRoutes);
+
+// DeliverOptionRoutes
+app.use('/deliverOptions', deliverOptionRoutes);
 
 
 // Error Handling Middleware

@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const cartSchema = new mongoose.Schema({
   product: { type: mongoose.Schema.Types.ObjectId, ref: "Products", required: true },
   quantity: { type: Number, required: true, min: 0 },
+  deliveryOption: { type: mongoose.Schema.Types.ObjectId, ref: "DeliverOption", required: true, default: "68ea8ade229c8fbb03760f1c" },
 }, { timestamps: true });
 
 

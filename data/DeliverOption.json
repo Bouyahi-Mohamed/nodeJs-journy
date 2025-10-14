@@ -1,0 +1,20 @@
+
+{
+  "deliverOption": [
+    {
+      "name": "Standard Delivery",
+      "priceCents": 599,
+      "estimatedDays": 6
+    },
+    {
+      "name": "Express Delivery",
+      "priceCents": 1299,
+      "estimatedDays": 3
+    },
+    {
+      "name": "Overnight Delivery",
+      "priceCents": 1999,
+      "estimatedDays": 1
+    }
+  ]
+}

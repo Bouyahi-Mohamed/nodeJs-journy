@@ -19,7 +19,7 @@ const { schemaDelete,schemaPatch,schemaPost,schemaPut } = require("../validation
 
 const getAllCartItems = async (req, res) => {
     try {
-        const cartItems = await Cart.find().populate('product');
+        const cartItems = await Cart.find().populate('product').populate('deliveryOption');
         res.json(cartItems);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -167,6 +167,27 @@ const deleteCartItem =  async (req, res) => {
         res.status(500).json({ message: error.message });
     }
         }
+// modify deliverOption in the cart item
+/**
+ * @disc Patch an deliveryOption of an item in the cart
+ * @param {string} id - The id of the item in the cart
+ * @param {string} deliveryOption - The new deliveryOption of the item in the cart
+ */
+const patchCartItemDeliveryOption = async (req, res) => {
+    try {
+        const { id, deliveryOption } = req.body;
+
+        const item = await Cart.findById(id).populate('deliveryOption');
+        if (item) {
+            item.deliveryOption = deliveryOption;
+            await item.save();
+        } else {
+            res.status(404).json({ message: 'Item not found' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
 
 module.exports = {
     getAllCartItems,
@@ -174,5 +195,6 @@ module.exports = {
     addCartItem,
     patchCartItem,
     deleteCartItem,
-    putCartItem
+    putCartItem,
+    patchCartItemDeliveryOption
 }
