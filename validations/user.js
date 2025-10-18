@@ -9,14 +9,19 @@ const User = require("../models/user.js");
 // we will use this schema to validate the user data
 // the user data will be validated when we register a new user
 // the user data will be validated when we update user information
-const userSchema = Joi.object({
+const registerUserSchema = Joi.object({
     username: Joi.string().min(3).max(30).required(),
     email: Joi.string().email().required(),
     password: Joi.string().min(6).required(),
     roles: Joi.string().valid('user', 'admin')
 });
+const loginUserSchema = Joi.object({
+    username: Joi.string().min(3).max(30).required(),
+    password: Joi.string().min(6).required()
+});
 
 // export the user validation schema
 module.exports = {
-    userSchema
+    registerUserSchema,
+    loginUserSchema
 };
