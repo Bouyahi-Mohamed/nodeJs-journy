@@ -17,6 +17,8 @@ const productRoutes = require('./routes/products.js');
 const cartRoutes = require('./routes/cart.js');
     // define the routes of api deliverOptions
 const deliverOptionRoutes = require('./routes/DeliverOption.js');
+    // define the routes of api users
+const userRoutes = require('./routes/user.js');
 
 // initialize express
 const app = express();
@@ -57,6 +59,8 @@ app.use('/cart', cartRoutes);
 // DeliverOptionRoutes
 app.use('/deliverOptions', deliverOptionRoutes);
 
+// User Routes
+app.use('/users', userRoutes);
 
 // Error Handling Middleware
 // we need to use the error handling middleware defined in the middlewares/errors.js file

@@ -3,6 +3,8 @@ const DeliverOption = require("../models/DeliverOption.js");
 
 /**
  * @disc Get all delivery options with calculated delivery dates from MongoDB
+ * @route GET /deliverOptions
+ * @access Public
  * @returns {Array} - The list of delivery options with estimated delivery dates
  */
 

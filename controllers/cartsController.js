@@ -14,6 +14,8 @@ const { schemaDelete,schemaPatch,schemaPost,schemaPut } = require("../validation
 
 /**
  * @disc Get all items in the cart
+ * @route GET /cart
+ * @access Public
  * @returns {Array} - The list of items in the cart
  */
 
@@ -31,6 +33,9 @@ const getAllCartItems = async (req, res) => {
 
 /**
  * @disc Get  items in the carts by id
+ * @route GET /cart/:id
+ * @access Public
+ * @returns {Object} - The item in the cart
  * @param {string} id - The id of the item in the cart
  */
 
@@ -53,6 +58,8 @@ const getCartById = async (req, res) => {
 // post a new item to the cart
 /**
  * @disc Post a new item to the cart
+ * @route POST /cart
+ * @access Public
  * @param {Object} item - The item to add to the cart
  */
 
@@ -90,6 +97,8 @@ const addCartItem =  async (req, res) => {
 //  patch an quantity of an item in the cart
 /**
  * @disc Patch an quantity of an item in the cart
+ * @route PATCH /cart/:id
+ * @access Public
  * @param {string} id - The id of the item in the cart
  * @param {number} quantity - The new quantity of the item in the cart
  */
@@ -120,6 +129,8 @@ const patchCartItem = async (req, res) => {
 //  put an quantity of an item in the cart
 /**
  * @disc Put an quantity of an item in the cart
+ * @route PUT /cart/:id
+ * @access Public
  * @param {string} id - The id of the item in the cart
  * @param {number} quantity - The new quantity of the item in the cart
  */
@@ -146,6 +157,8 @@ const putCartItem = async (req, res) => {
 //  delete an item from the cart
 /**
  * @disc Delete an item from the cart
+ * @route DELETE /cart/:id
+ * @access Public
  * @param {string} id - The id of the item to delete from the cart
 
  */
@@ -170,6 +183,8 @@ const deleteCartItem =  async (req, res) => {
 // modify deliverOption in the cart item
 /**
  * @disc Patch an deliveryOption of an item in the cart
+ * @route PATCH /cart/deliveryOption
+ * @access Public
  * @param {string} id - The id of the item in the cart
  * @param {string} deliveryOption - The new deliveryOption of the item in the cart
  */

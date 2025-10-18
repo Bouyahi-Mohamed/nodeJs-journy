@@ -13,6 +13,9 @@ const { schemaProductParams,schemaProductBody } = require("../validations/produi
 
 /**
  * @disc Get all items in the products
+ * @route GET /products
+ * @access Public
+ * @returns {Array} - The list of products
  */
 
 const getProducts = async (req, res) => {
@@ -28,6 +31,9 @@ const getProducts = async (req, res) => {
 
 /**
  * @disc Get a product by id
+ * @route GET /products/:id
+ * @access Public
+ * @returns {Object} - The product object
  * @param {string} id - The id of the product
  */
 
