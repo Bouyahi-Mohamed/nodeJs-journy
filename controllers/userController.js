@@ -6,6 +6,8 @@ const { registerUserSchema,loginUserSchema } = require('../validations/user.js')
 
 //import bcrypt for password hashing
 const bcrypt = require('bcryptjs');
+//import jwt for token generation
+const jwt = require('jsonwebtoken'); 
 
 // user api
 // creating controllers for Register a new user
@@ -22,7 +24,7 @@ const registerUser = async (req, res) => {
 
     // check if user already exists
     let existingUser = await user.findOne({ email: req.body.email });
-    if (existingUser) return res.status(400).send('User already exists.');
+    if (existingUser) return res.status(409).send('User already exists.');
 
     // hash password
     const salt = await bcrypt.genSalt(10);
@@ -39,8 +41,8 @@ const registerUser = async (req, res) => {
     // save user to database
 
     const savedUser = await newUser.save();
-// token generation can be added here for authentication
-    const token = null; // Placeholder for token generation logic
+    // token generation can be added here for authentication
+    const token = jwt.sign({ id: savedUser._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     res.status(201).json({ user: savedUser, token });
     
@@ -64,10 +66,10 @@ const loginUser = async (req, res) => {
 
     // check password using bcrypt to compare hashed password
     const isValidPassword = await bcrypt.compare(req.body.password, existingUser.password);
-    if (!isValidPassword) return res.status(400).send('Invalid username or password.');
+    if (!isValidPassword) return res.status(401).send('Invalid username or password.');
 
     // generate token can be added here for authentication
-    const token = null; // Placeholder for token generation logic
+    const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     res.status(200).json({ user: existingUser, token });
 };
